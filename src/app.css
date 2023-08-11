@@ -1,0 +1,477 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  min-height: 100vh;
+  position: relative;
+  font-family: "Inter", sans-serif;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  padding: 8%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 8%;
+  padding-right: 8%;
+  padding-top: 8%;
+  height: 90px;
+  position: fixed;
+  background-color: #fff;
+  width: 100%;
+}
+nav img {
+  width: 60px;
+  height: 40px;
+}
+nav #hambur {
+  display: none;
+}
+nav .hamburger {
+  display: block;
+  width: 50px;
+  height: 15px;
+  position: relative;
+  transition: 0.5 ease-in-out;
+  cursor: pointer;
+}
+nav .hamburger span {
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background-color: black;
+  border-radius: 9px;
+  opacity: 1;
+  z-index: 2;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+nav .hamburger span:nth-child(1) {
+  top: 0px;
+}
+nav .hamburger span:nth-child(2), nav .hamburger span:nth-child(3) {
+  top: 18px;
+}
+nav .hamburger span:nth-child(4) {
+  top: 36px;
+}
+nav .hamburger.open span:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+nav .hamburger.open span:nth-child(2) {
+  transform: rotate(45deg);
+}
+nav .hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+nav .hamburger.open span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+nav .lateral {
+  background: #fff;
+  width: 50rem;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  transition-timing-function: cubic-bezier(10, 2, 3, 1);
+  transform: translateX(50rem);
+  top: 0;
+  z-index: 0;
+  transition: 0.5s;
+}
+nav .lateral li {
+  margin: 12px;
+  margin-left: 30px;
+  list-style-type: none;
+}
+nav .lateral li:nth-child(1) {
+  margin-top: 150px;
+}
+nav .lateral li a {
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+}
+nav #hambur:checked ~ .lateral {
+  transform: translateX(35rem);
+}
+
+.container {
+  margin-top: 80px;
+}
+.container .container-web3 .web3-image .web3-image-desktop {
+  display: none;
+}
+.container .container-web3 .web3-text h1 {
+  font-size: 40px;
+  margin-top: 15px;
+  color: #020250;
+}
+.container .container-web3 .web3-text p {
+  color: gray;
+  font-size: 15px;
+  margin-top: 10px;
+  line-height: 23px;
+}
+.container .container-web3 .web3-text button {
+  background-color: #fa3411;
+  padding: 12px 21px;
+  margin-top: 22px;
+  margin-bottom: 5px;
+  border: none;
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+}
+.container .container-topics {
+  background-color: #080420;
+  color: white;
+  padding: 8%;
+  margin-bottom: 50px;
+}
+.container .container-topics h1 {
+  color: orange;
+}
+.container .container-topics .topics-text {
+  margin-top: 30px;
+}
+.container .container-topics .topics-text h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.container .container-topics .topics-text h3:hover {
+  color: orange;
+}
+.container .container-topics .topics-text p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.644);
+  margin-bottom: 30px;
+}
+
+.container-below .below-topics {
+  display: flex;
+  margin-bottom: 25px;
+}
+.container-below .below-topics .below-image {
+  width: 30%;
+}
+.container-below .below-topics .below-text {
+  width: 70%;
+  padding-left: 5%;
+}
+.container-below .below-topics .below-text h2 {
+  font-size: 35px;
+  color: #cccccc;
+}
+.container-below .below-topics .below-text h3 {
+  font-size: 20px;
+  margin-top: 5px;
+}
+.container-below .below-topics .below-text .p-below {
+  color: gray;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 426px) {
+  nav {
+    height: 100px;
+    padding: 6%;
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+  nav .lateral li {
+    margin-top: 20px;
+  }
+  nav .lateral li:nth-child(1) {
+    margin-top: 150px;
+  }
+  nav .lateral li a {
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+  }
+  nav #hambur:checked ~ .lateral {
+    transform: translateX(50%);
+  }
+
+  .content .container .container-web3 .web3-image .web3-image-mobile {
+    max-height: 500px;
+    margin-top: 10px;
+  }
+  .content .container .container-web3 .web3-text h1 {
+    font-size: 50px;
+    margin-top: 40px;
+  }
+  .content .container .container-web3 .web3-text p {
+    font-size: 19px;
+  }
+  .content .container .container-web3 .web3-text button {
+    margin-top: 30px;
+  }
+  .content .container .container-topics {
+    margin-top: 40px;
+  }
+  .content .container-below .below-topics .below-text h2 {
+    font-size: 50px;
+  }
+  .content .container-below .below-topics .below-text h3 {
+    font-size: 25px;
+  }
+  .content .container-below .below-topics .below-text p {
+    font-size: 17px;
+  }
+}
+@media screen and (min-width: 769px) {
+  nav {
+    position: static;
+  }
+  nav .logo {
+    margin-top: -10px;
+  }
+  nav .hamburger {
+    display: none;
+  }
+  nav .lateral {
+    display: flex;
+    width: 100%;
+    height: auto;
+    position: static;
+    transform: translateX(0);
+    justify-content: flex-end;
+    transition: 0s;
+    margin-top: -20px;
+  }
+  nav .lateral li {
+    margin: 20px;
+  }
+  nav .lateral li:nth-child(1) {
+    margin-top: 20px;
+  }
+  nav .lateral li a {
+    font-size: 15px;
+    color: gray;
+  }
+
+  .content {
+    padding: 0;
+    padding-left: 8%;
+    padding-right: 8%;
+    margin-top: -60px;
+  }
+  .content .container {
+    display: flex;
+    max-height: 350px;
+  }
+  .content .container .container-web3 {
+    width: 70%;
+  }
+  .content .container .container-web3 .web3-image {
+    width: 95%;
+  }
+  .content .container .container-web3 .web3-image .web3-image-mobile {
+    display: none;
+  }
+  .content .container .container-web3 .web3-image .web3-image-desktop {
+    display: block;
+    max-height: 200px;
+  }
+  .content .container .container-web3 .web3-text {
+    width: 95%;
+    display: flex;
+  }
+  .content .container .container-web3 .web3-text .web3-h1 {
+    width: 50%;
+  }
+  .content .container .container-web3 .web3-text .web3-h1 h1 {
+    font-size: 37px;
+    margin-top: 10px;
+  }
+  .content .container .container-web3 .web3-text .web3-p-button {
+    width: 50%;
+  }
+  .content .container .container-web3 .web3-text .web3-p-button p {
+    font-size: 11px;
+  }
+  .content .container .container-web3 .web3-text .web3-p-button button {
+    font-size: 10px;
+    margin-top: 10px;
+  }
+  .content .container .container-topics {
+    width: 30%;
+    margin-top: 0px;
+    padding: 2%;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+  }
+  .content .container .container-topics h1 {
+    font-size: 20px;
+  }
+  .content .container .container-topics .topics {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+  }
+  .content .container .container-topics .topics .topics-text {
+    margin: 0;
+  }
+  .content .container .container-topics .topics .topics-text h3 {
+    font-size: 15px;
+  }
+  .content .container .container-topics .topics .topics-text p {
+    font-size: 12px;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  .content .container-below {
+    display: flex;
+    max-height: 130px;
+    margin-top: 25px;
+    align-self: flex-start;
+  }
+  .content .container-below .below-topics .below-text {
+    padding: 4%;
+  }
+  .content .container-below .below-topics .below-text h2 {
+    font-size: 15px;
+  }
+  .content .container-below .below-topics .below-text h3 {
+    font-size: 15px;
+  }
+  .content .container-below .below-topics .below-text p {
+    font-size: 11px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  nav {
+    position: static;
+    padding: 4.5% 10%;
+  }
+  nav .logo {
+    margin-top: -10px;
+  }
+  nav .lateral li {
+    margin: 20px;
+  }
+  nav .lateral li:nth-child(1) {
+    margin-top: 20px;
+  }
+  nav .lateral li a {
+    font-size: 19px;
+    color: gray;
+  }
+
+  .content {
+    padding: 0;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: -70px;
+  }
+  .content .container {
+    display: flex;
+    max-height: 400px;
+  }
+  .content .container .container-web3 {
+    width: 70%;
+  }
+  .content .container .container-web3 .web3-image {
+    width: 95%;
+  }
+  .content .container .container-web3 .web3-image .web3-image-mobile {
+    display: none;
+  }
+  .content .container .container-web3 .web3-image .web3-image-desktop {
+    display: block;
+    max-height: 250px;
+  }
+  .content .container .container-web3 .web3-text {
+    width: 95%;
+    display: flex;
+  }
+  .content .container .container-web3 .web3-text .web3-h1 {
+    width: 50%;
+  }
+  .content .container .container-web3 .web3-text .web3-h1 h1 {
+    font-size: 39px;
+    margin-top: 10px;
+  }
+  .content .container .container-web3 .web3-text .web3-p-button {
+    width: 50%;
+  }
+  .content .container .container-web3 .web3-text .web3-p-button p {
+    font-size: 11px;
+  }
+  .content .container .container-web3 .web3-text .web3-p-button button {
+    font-size: 10px;
+    margin-top: 10px;
+  }
+  .content .container .container-topics {
+    width: 30%;
+    margin-top: 0px;
+    padding: 2%;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+  }
+  .content .container .container-topics h1 {
+    font-size: 20px;
+  }
+  .content .container .container-topics .topics {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+  }
+  .content .container .container-topics .topics .topics-text {
+    margin: 0;
+  }
+  .content .container .container-topics .topics .topics-text h3 {
+    font-size: 15px;
+  }
+  .content .container .container-topics .topics .topics-text p {
+    font-size: 12px;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  .content .container-below {
+    display: flex;
+    max-height: 130px;
+    margin-top: 25px;
+    align-self: flex-start;
+  }
+  .content .container-below .below-topics .below-text {
+    padding: 4%;
+  }
+  .content .container-below .below-topics .below-text h2 {
+    font-size: 15px;
+  }
+  .content .container-below .below-topics .below-text h3 {
+    font-size: 15px;
+  }
+  .content .container-below .below-topics .below-text p {
+    font-size: 11px;
+  }
+}
+
+/*# sourceMappingURL=app.css.map */
